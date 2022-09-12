@@ -11,6 +11,9 @@ namespace GeoChatter.Core.Model.Map
         public string DisplayName { get; set; }
         public string UserName { get; set; }
         public string ProfilePicUrl { get; set; }
+        public string PlayerFlagName { get; set; }
+        public string PlayerFlag { get; set; }
+
 //Only round
         public bool WasRandom { get; set; }
         public double Score { get; set; }
