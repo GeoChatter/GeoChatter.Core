@@ -16,6 +16,11 @@ namespace GeoChatter.Model
         /// </summary>
         [DataMember(Name = "channelid")]
         public string ChannelId { get; set; }
+         /// <summary>
+        /// Channel id
+        /// </summary>
+        [DataMember(Name = "clientid")]
+        public string ClientId { get; set; }
         /// <summary>
         /// Bot name
         /// </summary>
