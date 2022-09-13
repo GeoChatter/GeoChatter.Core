@@ -42,7 +42,7 @@ namespace GeoChatter.Model
         /// Full display name for consistency. Shows <see cref="PlayerName"/> as alternative if special script characters present in <see cref="DisplayName"/>
         /// </summary>
         [NotMapped, JsonIgnore]
-        public string FullDisplayName => PlayerName?.ToLowerInvariant() == DisplayName?.ToLowerInvariant() && !string.IsNullOrEmpty(DisplayName) && SourcePlatform != Platforms.Twitch
+        public string FullDisplayName => (PlayerName?.ToLowerInvariant() == DisplayName?.ToLowerInvariant() && !string.IsNullOrEmpty(DisplayName)) || SourcePlatform != Platforms.Twitch
             ? DisplayName
             : $"{DisplayName}({PlayerName})";
 
