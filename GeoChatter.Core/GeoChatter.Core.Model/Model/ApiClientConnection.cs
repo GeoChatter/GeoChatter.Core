@@ -26,6 +26,10 @@ namespace GeoChatter.Model
         /// <summary>
         /// 
         /// </summary>
+        public string ClientId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string ChannelName { get; set; }
         /// <summary>
         /// 
@@ -45,7 +49,7 @@ namespace GeoChatter.Model
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{ChannelId} ({MapID}) ({ClientVersion}) ({ConnectionId})";
+            return $"{ChannelId} (map:{MapID}) (ver:{ClientVersion}) (conn:{ConnectionId}) (client:{ClientId})";
         }
     }
 
