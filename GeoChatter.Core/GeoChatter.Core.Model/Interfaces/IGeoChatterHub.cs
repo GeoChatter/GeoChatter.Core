@@ -11,6 +11,8 @@ namespace GuessServerApiInterfaces
         void ClientSuccess(bool success);
         Task<LoginResponse> Login(ApiClient client);
        void Logoff(ApiClient client);
+
+        Task<string> ReclaimMapIdentifier(string mapId);
        void KeepAlive(ApiClient client);
         Task<MapOptions> MapLogin(string botname);
         //Task StartGame(ApiGame game);
