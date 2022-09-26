@@ -155,7 +155,7 @@ namespace GeoChatter.Model
         /// <para>-2 for finished infinite games</para>
         /// <para>-1 for finished games</para>
         /// </summary>
-        public int CurrentRound { get; set; }
+        public int CurrentRound { get; set; } = 1;
 
         /// <summary>
         /// Position 1-based in a game chain for infinite games

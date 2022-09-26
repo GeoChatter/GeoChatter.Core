@@ -206,9 +206,16 @@ namespace GeoChatter.Extensions
             if (parent.FindGame(geoGuessrGame.token, out status) is Game g)
             {
                 labelSettings?.ForEach(ls => { if (!g.LabelSettings.ContainsKey(ls.Key)) { g.LabelSettings.Add(ls.Key, ls.Value); } });
-
-                g.GetCurrentRound().CorrectLocation = new Coordinates(geoGuessrGame.rounds[g.CurrentRound - 1].lat, geoGuessrGame.rounds[g.CurrentRound - 1].lng);
-
+                Round r = g.GetCurrentRound();
+                if (r != null && g.CurrentRound <= (geoGuessrGame.rounds?.Count ?? 0))
+                {
+                    GGRound gr = geoGuessrGame.rounds[g.CurrentRound - 1];
+                    r.CorrectLocation = new Coordinates(gr.lat, gr.lng);
+                }
+                else
+                {
+                    return null;
+                }
                 return g;
             }
             else
