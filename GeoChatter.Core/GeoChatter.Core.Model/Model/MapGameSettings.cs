@@ -8,7 +8,7 @@ namespace GeoChatter.Core.Model.Map
 {
     public class MapGameSettings
     {
-        public int MapID { get; set; }
+        public string MapID { get; set; }
         public string MapName { get; set; }
         public bool IsInfinite { get; set; }
         public bool IsStreak { get; set; }

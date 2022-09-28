@@ -7,6 +7,9 @@
 
         public bool ShowBorders { get; set; }
 
+        public bool IsInRound { get; set; }
+        public bool IsInGame { get; set; }
+
         public string MapIdentifier { get; set; }
         public string Streamer { get; set; }
 

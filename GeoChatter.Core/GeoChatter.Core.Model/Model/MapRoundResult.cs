@@ -13,8 +13,10 @@ namespace GeoChatter.Core.Model.Map
         public string ProfilePicUrl { get; set; }
         public string PlayerFlagName { get; set; }
         public string PlayerFlag { get; set; }
+        public string PlayerColor { get; set; }
+        public string SourcePlatform { get; set; }
 
-//Only round
+        //Only round
         public bool WasRandom { get; set; }
         public double Score { get; set; }
         public double Distance { get; set; }
