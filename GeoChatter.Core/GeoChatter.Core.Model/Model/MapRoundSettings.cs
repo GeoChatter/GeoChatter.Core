@@ -12,12 +12,12 @@ namespace GeoChatter.Core.Model.Map
         public int RoundNumber { get; set; }
         public bool IsMultiGuess { get; set; }
         public DateTime StartTime { get; set; }
-        public string Layers { get; set; }
+        public List<string> Layers { get; set; }
         public bool Is3dEnabled { get; set; }
         public bool BlackAndWhite { get; set; }
         public bool Blurry { get; set; }
         public bool Mirrored { get; set; }
-        public bool UpsidedDown { get; set; }
+        public bool UpsideDown { get; set; }
         public bool Sepia { get; set; }
 	    public int MaxZoomLevel { get; set; }
         
