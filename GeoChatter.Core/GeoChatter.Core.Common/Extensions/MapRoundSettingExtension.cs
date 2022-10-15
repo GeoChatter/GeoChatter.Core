@@ -29,7 +29,7 @@ namespace GeoChatter.Core.Common.Extensions
                 ""Mirrored"": {settings.Mirrored.ToStringDefault()}, 
                 ""RoundNumber"": {settings.RoundNumber.ToStringDefault()}, 
                 ""Sepia"": {settings.Sepia.ToStringDefault()},
-                ""StartTime"": {settings.StartTime.ToStringDefault()},
+                ""StartTime"": ""{settings.StartTime: G}"",
                 ""UpsideDown"": {settings.UpsideDown.ToStringDefault()},
                 ""Layers"": [{string.Join(",", settings.Layers
                                                 .Select(g => "\""+g.EscapeJSON()+"\""))}]
