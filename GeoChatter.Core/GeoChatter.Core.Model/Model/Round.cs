@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeoChatter.Core.Model.Map;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -56,7 +57,10 @@ namespace GeoChatter.Model
         /// </summary>
         [NotMapped, JsonIgnore]
         public bool IsMultiGuess => (Flags & RoundOption.MULTIGUESS) > 0;
-
+        /// <summary>
+        /// The round settings for the map
+        /// </summary>
+        public MapRoundSettings MapRoundSettings { get; set; }
         /// <summary>
         /// All guesses made during this round
         /// </summary>
@@ -84,12 +88,12 @@ namespace GeoChatter.Model
         /// <summary>
         /// Country information of <see cref="CorrectLocation"/>
         /// </summary>
-        public Country Country { get; set; }
+        public Country Country { get; set; } = Country.Unknown;
 
         /// <summary>
         /// Exact region information of <see cref="CorrectLocation"/>
         /// </summary>
-        public Country ExactCountry { get; set; }
+        public Country ExactCountry { get; set; } = Country.Unknown;
 
         /// <summary>
         /// Time the round was first started
