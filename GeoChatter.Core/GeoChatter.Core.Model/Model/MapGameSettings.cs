@@ -8,6 +8,10 @@ namespace GeoChatter.Core.Model.Map
 {
     public class MapGameSettings
     {
+        /// <summary>
+        /// DB id
+        /// </summary>
+        public int Id { get; set; }
         public string MapID { get; set; }
         public string MapName { get; set; }
         public bool IsInfinite { get; set; }
