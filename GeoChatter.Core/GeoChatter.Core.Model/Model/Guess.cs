@@ -66,6 +66,15 @@ namespace GeoChatter.Model
         public double Score { get; set; }
 
         /// <summary>
+        /// What source the guess originated from: MAP, EXT, CHAT
+        /// </summary>
+        public string Source { get; set; }
+
+        /// <summary>
+        /// Which layer the guess was made from
+        /// </summary>
+        public string Layer { get; set; }
+        /// <summary>
         /// Guess point for sorting
         /// </summary>
         [NotMapped, JsonIgnore]
@@ -130,12 +139,12 @@ namespace GeoChatter.Model
         /// <summary>
         /// Country information of the guess
         /// </summary>
-        public Country Country { get; set; } = new Country("unknown", "__");
+        public Country Country { get; set; } = Country.Unknown;
 
         /// <summary>
         /// Exact region information of the guess
         /// </summary>
-        public Country CountryExact { get; set; } = new Country("unknown", "__");
+        public Country CountryExact { get; set; } = Country.Unknown;
         /// <summary>
         /// Amount of guesses made in <see cref="Round"/> for <see cref="Player"/>
         /// </summary>

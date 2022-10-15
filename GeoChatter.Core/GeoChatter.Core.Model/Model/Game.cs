@@ -1,4 +1,5 @@
-﻿using GeoChatter.Model.Enums;
+﻿using GeoChatter.Core.Model.Map;
+using GeoChatter.Model.Enums;
 using GeoChatter.Model.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -90,6 +91,8 @@ namespace GeoChatter.Model
         /// Channel the game was hosted by
         /// </summary>
         public string Channel { get; set; }
+
+        public MapGameSettings MapGameSettings { get; set; }
 
         /// <summary>
         /// Time of the game started

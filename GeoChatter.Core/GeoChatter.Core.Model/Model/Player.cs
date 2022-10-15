@@ -52,6 +52,10 @@ namespace GeoChatter.Model
         public string PlayerFlag { get; set; }
 
         /// <summary>
+        /// The suapabase ID of the player
+        /// </summary>
+        public string SupabaseId { get; set; }
+        /// <summary>
         /// Flag name
         /// </summary>
         public string PlayerFlagName
