@@ -190,6 +190,15 @@ namespace GeoChatter.Core.Common.Extensions
         }
 
         /// <summary>
+        /// Escape backslash and quotation marks for strings to be used in serialized JSON formatted strings
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string EscapeJSON(this string str)
+        {
+            return str?.ReplaceDefault("\\", "\\\\")?.ReplaceDefault("\"", "\\\"");
+        }
+
         /// Limit value of <paramref name="d"/> within integer value bounds
         /// </summary>
         /// <param name="d"></param>

@@ -233,16 +233,11 @@ namespace GeoChatter.Extensions
 
         private static string GameToJSON([NotNull] this Game game, bool usePrev = false, bool useNext = false, bool firstRoundMultiguess = false)
         {
-            if (game == null)
-            {
-                return "\"\"";
-            }
-
             string s =
             $@"
             {{ 
                 ""Id"": ""{game.GeoGuessrId}"",
-                ""Streamer"": ""{game.Channel}"",
+                ""Streamer"": ""{game.Channel.EscapeJSON()}"",
                 ""Mode"": ""{game.Mode}"",
                 ""GameSettings"": {{
                     ""TimeLimit"": {game.Source.timeLimit},
@@ -255,8 +250,8 @@ namespace GeoChatter.Extensions
                     ""ZoomEnabled"": {(!game.Source.forbidZooming).ToStringDefault()}
                 }},
                 ""GameMapInfo"": {{
-                    ""ID"": ""{game.Source.map}"",
-                    ""Name"": ""{game.Source.mapName}""
+                    ""ID"": ""{game.Source.map.EscapeJSON()}"",
+                    ""Name"": ""{game.Source.mapName.EscapeJSON()}""
                 }},
                 ""IsFirstRoundMultiGuess"": {firstRoundMultiguess.ToStringDefault()},
                 ""Previous"": {(usePrev && game.Previous != null ? game.Previous.GameToJSON(usePrev: true) : "\"\"")},

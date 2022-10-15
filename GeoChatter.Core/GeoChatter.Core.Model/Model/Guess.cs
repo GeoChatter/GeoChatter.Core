@@ -51,7 +51,7 @@ namespace GeoChatter.Model
         /// </summary>
         public bool WasRandom { get; set; }
         /// <summary>
-        /// Wheter <see cref="GuessLocation"/> was randomly created
+        /// Wheter the guess was a temporary guess
         /// </summary>
         public bool IsTemporary { get; set; }
         /// <summary>
@@ -64,6 +64,11 @@ namespace GeoChatter.Model
         /// Score calculated for the guess
         /// </summary>
         public double Score { get; set; }
+
+        /// <summary>
+        /// Arguments used with random guessing
+        /// </summary>
+        public string RandomGuessArgs { get; set; }
 
         /// <summary>
         /// What source the guess originated from: MAP, EXT, CHAT
