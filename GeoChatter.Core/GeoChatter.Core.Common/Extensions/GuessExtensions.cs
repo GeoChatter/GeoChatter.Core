@@ -38,10 +38,10 @@ namespace GeoChatter.Extensions
     ""GuessLocation"": {{
         ""Latitude"": {guess.GuessLocation.Latitude.ToStringDefault()},
         ""Longitude"": {guess.GuessLocation.Longitude.ToStringDefault()},
-        ""CountryName"": ""{guess.Country.Name}"",
-        ""CountryCode"": ""{guess.Country.Code}"",
-        ""ExactCountryName"": ""{guess.CountryExact.Name}"",
-        ""ExactCountryCode"": ""{guess.CountryExact.Code}"",
+        ""CountryName"": ""{guess.Country.Name.EscapeJSON()}"",
+        ""CountryCode"": ""{guess.Country.Code.EscapeJSON()}"",
+        ""ExactCountryName"": ""{guess.CountryExact.Name.EscapeJSON()}"",
+        ""ExactCountryCode"": ""{guess.CountryExact.Code.EscapeJSON()}"",
         ""Pano"": ""{guess.Pano ?? string.Empty}"",
         ""Heading"": {guess.Heading.ToStringDefault()},
         ""Pitch"": {guess.Pitch.ToStringDefault()},
@@ -54,7 +54,10 @@ namespace GeoChatter.Extensions
     ""GuessedBefore"": {guess.GuessedBefore.ToStringDefault()},
     ""GuessCount"": {guess.GuessCounter},
     ""IsStreamerGuess"": {guess.IsStreamerGuess.ToStringDefault()},
+    ""Source"": ""{guess.Source.EscapeJSON()}"",
+    ""Layer"": ""{guess.Layer.EscapeJSON()}"",
     ""WasRandom"": {guess.WasRandom.ToStringDefault()},
+    ""RandomGuessArgs"": ""{guess.RandomGuessArgs.EscapeJSON()}"",
     ""CountryStreak"": {guess.Player.CountryStreak},
     ""TimeTaken"": {guess.Time.ToStringDefault()}
 }}";

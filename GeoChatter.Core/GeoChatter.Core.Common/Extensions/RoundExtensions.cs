@@ -80,8 +80,9 @@ namespace GeoChatter.Extensions
                 ""CorrectLocation"": {round.CorrectLocationToJson()},
                 ""Guesses"": [{string.Join(",", round
                                                 .GetGuessesOrderedByDefaultFilters()
-                                                .Select(g => g.ToJson()))}]
-            }}";
+                                                .Select(g => g.ToJson()))}],
+                ""MapRoundSettings"": {round.MapRoundSettings.ToJson()}
+                }}";
             return s;
         }
 
