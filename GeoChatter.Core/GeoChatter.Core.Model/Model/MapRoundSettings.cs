@@ -9,6 +9,10 @@ namespace GeoChatter.Core.Model.Map
 {
     public class MapRoundSettings
     {
+        /// <summary>
+        /// DB id
+        /// </summary>
+        public int Id { get; set; }
         public int RoundNumber { get; set; }
         public bool IsMultiGuess { get; set; }
         public DateTime StartTime { get; set; }
